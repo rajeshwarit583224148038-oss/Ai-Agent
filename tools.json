@@ -1,0 +1,81 @@
+[
+  {
+    "name": "calculator",
+    "description": "Performs basic mathematical operations between two numbers: addition, subtraction, multiplication, division, modulo, and power.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "operation": {
+          "type": "STRING",
+          "description": "The mathematical operation to perform.",
+          "enum": [
+            "add",
+            "subtract",
+            "multiply",
+            "divide",
+            "modulo",
+            "power"
+          ]
+        },
+        "a": {
+          "type": "NUMBER",
+          "description": "The first number (or base in power)."
+        },
+        "b": {
+          "type": "NUMBER",
+          "description": "The second number (or exponent in power)."
+        }
+      },
+      "required": [
+        "operation",
+        "a",
+        "b"
+      ]
+    }
+  },
+  {
+    "name": "web_search",
+    "description": "Searches the web for facts, information, current data, definitions, and knowledge on any topic.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "query": {
+          "type": "STRING",
+          "description": "The search query keywords to look up on the web."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "date_time",
+    "description": "Gets the current date, time, day of the week, year, and timezone. Useful for knowing today's date, current time, or answering questions related to dates and years.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "timezone": {
+          "type": "STRING",
+          "description": "Optional timezone name such as 'local', 'UTC', 'Asia/Kolkata', or 'America/New_York'. Defaults to 'local'."
+        }
+      }
+    }
+  },
+  {
+    "name": "retrieve_student_info",
+    "description": "RAG Document Retrieval Tool. Searches and retrieves relevant student records from the Student Database document based on student name, student ID, department, attendance, placement eligibility, or subject marks.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "query": {
+          "type": "STRING",
+          "description": "Search keyword or filter criteria (e.g. 'Priya Sharma', 'STU001', 'CSE', 'AIDS', 'highest overall', 'attendance below 75%', 'placement eligible', 'AI above 90')."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  }
+]
